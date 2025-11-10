@@ -1,0 +1,19 @@
+{
+  "$schema": "https://zeabur.com/schemas/service.json",
+  "services": {
+    "cloud-save-server": {
+      "name": "cloud-save-server",
+      "image": "node:18",
+      "ports": [
+        {
+          "port": 8080
+        }
+      ],
+      "domains": [
+        {
+          "primary": true
+        }
+      ]
+    }
+  }
+}
