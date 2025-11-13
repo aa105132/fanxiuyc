@@ -7,7 +7,7 @@ const app = express();
 const DATA_DIR = path.join(__dirname, 'data');
 
 app.use(cors());
-app.use(express.json({ limit: '30mb' }));
+app.use(express.json({ limit: '300mb' }));
 
 fs.mkdir(DATA_DIR, { recursive: true }).catch(console.error);
 
@@ -95,3 +95,4 @@ app.delete('/api/delete', async (req, res) => {
 app.listen(process.env.PORT || 3000, () => {
     console.log(`Server is running on port ${process.env.PORT || 3000}`);
 });
+
