@@ -1,8 +1,7 @@
 apiVersion: zeabur.com/v1
 kind: Template
 metadata:
-  name: Immersive-Cultivation-Cloud-Save
-
+  name: immersive-cultivation-cloud-save
 spec:
   description: A lightweight cloud save backend for the "Immersive Cultivation" game panel.
   icon: https://raw.githubusercontent.com/zeabur/service-icons/main/src/nodejs.svg
@@ -11,31 +10,26 @@ spec:
     - Tool
     - Save
     - NodeJS
-    
   readme: |-
     # Immersive Cultivation Cloud Save Backend
-    
     This is a one-click deployment template for a cloud save backend service, specifically designed for the "Immersive Cultivation" game panel.
-    
     ## How to Use
-    
     1.  After deployment, Zeabur will provide you with a public domain for this service.
     2.  Copy this domain (e.g., `https://your-service-name.zeabur.app`).
     3.  Paste it into the "ApiUrl" field in your game panel's cloud save settings.
     4.  You're all set!
-
   services:
     - name: cloud-save-server
       template: GIT
       spec:
         source:
-          url: https://github.com/aa105132/fanxiuyc.git
-            
+          source: GITHUB
+          repo: "1093427283"
+          branch: main
         ports:
           - id: web
             port: 8080
             type: HTTP
-            
         volumes:
           - id: data-storage
             dir: /data
